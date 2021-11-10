@@ -7,6 +7,7 @@ module.exports = {
       tsconfig: "./tsconfig.jest.json",
     },
   },
+  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
   setupFilesAfterEnv: ["./test/jest.setup.ts"],
   coverageThreshold: {
     global: {
@@ -15,5 +16,8 @@ module.exports = {
       lines: 100,
       statements: 100,
     },
+  },
+  transform: {
+    ".+\\.(css|styl|less|sass|scss)$": "jest-css-modules-transform",
   },
 };
